@@ -1,0 +1,7 @@
+HATEOAS Your Cake and Eat it Too: Turning Complex Business Processes into an Easy-To-Use REST API.
+
+
+Building a HATEOAS API is challenging and requires a unique approach and methodology in order to succeed. Matt Bishop shares the lessons learned and heuristics developed during a year-long team effort to build Elastic Path's Digital Commerce API following HATEOAS principles of resource design and hypermedia linking. Discover how to build an effective HATEOAS API client to use your API. Learn what technologies exist (and what you will need to build) to develop and deploy an enterprise-grade HATEOAS API product.
+
+
+Matthew Bishop is the product architect at Elastic Path. He has been building and using all sorts of web APIs since the 1990s including cgi-bin/perl, RMI, IIOP/CORBA, XML-RPC, SOAP and a wide assortment of REST APIs. While overly-proud of the DCAPI, he is hoping to be challenged on his assumptions as well as air a bit of dirty HATEOAS laundry with everyone to move the ball forward together.
