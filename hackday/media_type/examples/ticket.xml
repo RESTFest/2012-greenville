@@ -1,0 +1,40 @@
+<ticket
+	xmlns="urn:org.restfest.2012.hackday.helpdesk.ticket"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:comments="urn:org.restfest.2012.hackday.helpdesk.comments"
+>
+	<atom:link rel="self" href="http://.../tickets/9172361" type="application/vnd.org.restfest.2012.hackday+xml" />
+	
+	<created_at>2012-09-13T12:03:00Z</created_at>
+	<updated_at>2012-09-13T12:03:00Z</updated_at>
+	
+	<summary>Running out of coffee</summary>
+	
+	<description>It appears that we'll be running out of coffee any moment.
+
+I'm worried that we might have a full blown riot on our hands if that happens.</description>
+	
+	<author>
+		<!-- <atom:link rel="http://helpdesk.hackday.2012.restfest.org/rels/user" href="http://.../users/817236781" type="application/vnd.org.restfest.2012.hackday+xml" /> -->
+		<name>David Zuelke</name>
+		<email>david.zuelke@bitextender.com</email>
+	</author>
+	
+	<assignee>
+		<atom:link rel="http://helpdesk.hackday.2012.restfest.org/rels/user" href="http://.../users/817236781" type="application/vnd.org.restfest.2012.hackday+xml" />
+		<name>Benjamin Young</name>
+	</assignee>
+	
+	<tag>restfest</tag>
+	<tag>breakfast</tag>
+	<tag>coffee</tag>
+	<tag>catering</tag>
+	
+	<state>open</state>
+	
+	<!-- <atom:link rel="http://helpdesk.hackday.2012.restfest.org/rels/ticket/state" href="http://.../tickets/9172361/state" type="text/plain" /> -->
+	
+	<comments:comments count="2">
+		<atom:link rel="http://helpdesk.hackday.2012.restfest.org/rels/comments" href="http://.../tickets/9172361/comments" type="application/vnd.org.restfest.2012.hackday.helpdesk+xml" />
+	</comments:comments>
+</ticket>

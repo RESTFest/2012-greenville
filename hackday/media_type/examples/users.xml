@@ -1,0 +1,40 @@
+<users:users
+	xmlns="urn:org.restfest.2012.hackday.helpdesk.user"
+	xmlns:users="urn:org.restfest.2012.hackday.helpdesk.users"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+>
+	<atom:link rel="self" href="http://.../users/" type="application/vnd.org.restfest.2012.hackday+xml" />
+	
+	<user>
+		<atom:link rel="self" href="http://.../users/dzuelke" type="application/vnd.org.restfest.2012.hackday+xml" />
+	
+		<name>David Zuelke</name>
+		<email>david.zuelke@bitextender.com</email>
+	
+		<level>administrator</level>
+		
+		<!-- could have link to assigned tickets in the future et cetera -->
+	</user>
+	
+	<user>
+		<atom:link rel="self" href="http://.../users/snoopy" type="application/vnd.org.restfest.2012.hackday+xml" />
+	
+		<name>Joe Cool</name>
+		<email>snoopy@peanuts.com</email>
+	
+		<level>agent</level>
+		
+		<!-- could have link to assigned tickets in the future et cetera -->
+	</user>
+	
+	<user>
+		<atom:link rel="self" href="http://.../users/jdoe" type="application/vnd.org.restfest.2012.hackday+xml" />
+	
+		<name>John Doe</name>
+		<email>johnd@acme.com</email>
+	
+		<level>user</level>
+		
+		<!-- could have link to opened tickets in the future et cetera -->
+	</user>
+</users:users>

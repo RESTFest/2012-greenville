@@ -1,0 +1,13 @@
+<user
+	xmlns="urn:org.restfest.2012.hackday.helpdesk.user"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+>
+	<atom:link rel="self" href="http://.../users/dzuelke" type="application/vnd.org.restfest.2012.hackday+xml" />
+
+	<name>David Zuelke</name>
+	<email>david.zuelke@bitextender.com</email>
+
+	<level>administrator</level>
+
+	<!-- could have link to opened or assigned tickets in the future et cetera -->
+</user>
