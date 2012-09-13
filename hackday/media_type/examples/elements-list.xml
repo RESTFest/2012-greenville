@@ -1,0 +1,55 @@
+<root>
+	<!-- existing representations -->
+
+	<!-- home -->
+	<helpdesk
+		xmlns="urn:org.restfest.2012.hackday.helpdesk"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+		xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	>
+		<atom:link rel="self">
+		<xhtml:form 
+			rel="http://helpdesk.hackday.2012.restfest.org/rels/tickets" 
+		/>
+		<xhtml:form
+			rel="http://helpdesk.hackday.2012.restfest.org/rels/users"	
+		/>
+	</helpdesk>
+	
+	<!-- ticket -->
+	<ticket
+		xmlns="urn:org.restfest.2012.hackday.helpdesk.ticket"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+		xmlns:comments="urn:org.restfest.2012.hackday.helpdesk.comments"
+	>
+		<atom:link
+			rel="self"
+		/>
+		<created_at/>
+		<updated_at />
+		<summary />
+		<description />
+		<author>
+			<atom:link 
+				rel="http://helpdesk.hackday.2012.restfest.org/rels/user"
+			/>
+			<name/>
+			<email/>
+		</author>
+		<assignee>
+			<atom:link 
+				rel="http://helpdesk.hackday.2012.restfest.org/rels/user"
+			/>
+			<name/>
+		</assignee>
+		<tag/> <!-- multiple possible -->
+		<state/> <!-- fixed enumeration? -->
+		<comments:comments count=""> <!-- why namespace here? -->
+			<atom:link 
+				rel="http://helpdesk.hackday.2012.restfest.org/rels/comments"
+			/>
+		</comments:comments>
+	</ticket>
+</root>
+
+
