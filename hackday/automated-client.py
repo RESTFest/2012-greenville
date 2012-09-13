@@ -254,6 +254,20 @@ class TestTicket(ClientTestCase):
         response, body = self.post_ticket("<this is garbage", False)
         self.assertEqual("400", response['status'])
 
+    def test_post_empty_ticket(self):
+        response, body = self.post_ticket("<ticket></ticket>", False)
+        self.assertEqual("400", response['status'])
+
+    def test_post_ticket_with_no_summary(self):
+        response, body = self.post_ticket(
+            "<ticket><description>foo</description></ticket>", False)
+        self.assertEqual("400", response['status'])
+
+    def test_post_ticket_with_summary_only(self):
+        response, body = self.post_ticket(
+            "<ticket><summary>foo</summary></ticket>", False)
+        self.assertEqual("200", response['status'])
+
     def test_post_ticket_gives_location_of_ticket(self):
         response, body = self.post_new_ticket(False)
         self.assertEqual('201', response['status'])
@@ -295,7 +309,7 @@ class TestTicket(ClientTestCase):
         # Reopen it.
         ticket.state.string = "open"
         response, content, new_representation = self.put_ticket(ticket)
-        soup = sef.parse(new_representation)
+        soup = self.parse(new_representation)
         self.assertEqual("open", soup.state.string)
 
     def test_set_bad_state(self):
