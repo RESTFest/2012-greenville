@@ -1,5 +1,5 @@
 <comment
-	xmlns="urn:org.restfest.2012.hackday.helpdesk.comments"
+	xmlns="urn:org.restfest.2012.hackday.helpdesk.comment"
 	xmlns:atom="http://www.w3.org/2005/Atom"
 >
 	<atom:link rel="self" href="http://.../tickets/9172361/comments/askjklz1287a" type="application/vnd.org.restfest.2012.hackday+xml" />
