@@ -24,7 +24,7 @@
 	<event timestamp="2012-09-13T12:01:49Z" type="comment_creation">
 		<comment:comment>
 			<atom:link rel="self" href="http://.../tickets/9172361/comments/askjklz1287a" type="application/vnd.org.restfest.2012.hackday+xml" />
-			<atom:link rel="http://helpdesk.hackday.2012.restfest.org/rels/ticket" href="http://.../tickets/9172361/comments/askjklz1287a" type="application/vnd.org.restfest.2012.hackday+xml" />
+			<atom:link rel="http://helpdesk.hackday.2012.restfest.org/rels/ticket" href="http://.../tickets/9172361" type="application/vnd.org.restfest.2012.hackday+xml" />
 			<comment:created_at>2012-09-13T12:01:49Z</comment:created_at>
 			<comment:author>
 				<comment:name>Joe Cool</comment:name>
