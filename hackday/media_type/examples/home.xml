@@ -1,0 +1,15 @@
+<helpdesk
+	xmlns="urn:org.restfest.2012.hackday.helpdesk"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+	<atom:link rel="self" href="http://.../" type="application/vnd.org.restfest.2012.hackday+xml"/>
+	
+	<xhtml:form rel="http://helpdesk.hackday.2012.restfest.org/rels/tickets" type="application/vnd.org.restfest.2012.hackday+xml">
+		<!-- tbd -->
+	</xhtml:form>
+	
+	<xhtml:form rel="http://helpdesk.hackday.2012.restfest.org/rels/users" type="application/vnd.org.restfest.2012.hackday+xml">
+		<!-- tbd -->
+	</xhtml:form>
+</helpdesk>
