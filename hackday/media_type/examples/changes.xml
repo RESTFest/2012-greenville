@@ -3,6 +3,7 @@
 	xmlns:ticket="urn:org.restfest.2012.hackday.helpdesk.ticket"
 	xmlns:comment="urn:org.restfest.2012.hackday.helpdesk.comment"
 	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:user="urn:org.restfest.2012.hackday.helpdesk.user"
 >
 	<atom:link rel="prev" type="application/vnd.org.restfest.2012.hackday+xml" href="http://../feed?from=2012-09-13T12:00:00Z&amp;to=2012-09-13T12:00:59Z" />
 	<atom:link rel="self" type="application/vnd.org.restfest.2012.hackday+xml" href="http://../feed?from=2012-09-13T12:01:00Z&amp;to=2012-09-13T12:01:59Z" />
@@ -27,8 +28,10 @@
 			<atom:link rel="http://helpdesk.hackday.2012.restfest.org/rels/ticket" href="http://.../tickets/9172361" type="application/vnd.org.restfest.2012.hackday+xml" />
 			<comment:created_at>2012-09-13T12:01:49Z</comment:created_at>
 			<comment:author>
-				<comment:name>Joe Cool</comment:name>
-				<comment:email>snoopy@peanuts.com</comment:email>
+				<user:user>
+					<user:name>Joe Cool</user:name>
+					<user:email>snoopy@peanuts.com</user:email>
+				</user:user>
 			</comment:author>
 			<comment:body>I really like this idea<comment:body>
 		</comment:comment>

@@ -2,6 +2,7 @@
 	xmlns="urn:org.restfest.2012.hackday.helpdesk.ticket"
 	xmlns:atom="http://www.w3.org/2005/Atom"
 	xmlns:comments="urn:org.restfest.2012.hackday.helpdesk.comments"
+	xmlns:user="urn:org.restfest.2012.hackday.helpdesk.user"
 >
 	<atom:link rel="self" href="http://.../tickets/9172361" type="application/vnd.org.restfest.2012.hackday+xml" />
 	
@@ -15,14 +16,17 @@
 I'm worried that we might have a full blown riot on our hands if that happens.</description>
 	
 	<author>
-		<!-- <atom:link rel="http://helpdesk.hackday.2012.restfest.org/rels/user" href="http://.../users/817236781" type="application/vnd.org.restfest.2012.hackday+xml" /> -->
-		<name>David Zuelke</name>
-		<email>david.zuelke@bitextender.com</email>
+		<user:user>
+			<name>David Zuelke</name>
+			<email>david.zuelke@bitextender.com</email>
+		</user:user>
 	</author>
 	
 	<assignee>
-		<atom:link rel="http://helpdesk.hackday.2012.restfest.org/rels/user" href="http://.../users/817236781" type="application/vnd.org.restfest.2012.hackday+xml" />
-		<name>Benjamin Young</name>
+		<user:user>
+			<atom:link rel="self" href="http://.../users/817236781" type="application/vnd.org.restfest.2012.hackday+xml" />
+			<name>Benjamin Young</name>
+		</user:user>
 	</assignee>
 	
 	<tag>restfest</tag>
