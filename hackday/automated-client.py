@@ -305,7 +305,6 @@ class TestTicket(ClientTestCase):
 
     def test_delete_ticket(self):
         response, body = self.post_new_ticket(False)
-        import pdb; pdb.set_trace()
         location = response['location']
         response, data = self.request(location, 'DELETE')
         self.assertEqual('200', response['status'])
