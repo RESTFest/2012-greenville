@@ -5,6 +5,7 @@
 >
 	<atom:link rel="self" href="http://.../" type="application/vnd.org.restfest.2012.hackday+xml"/>
 	
+	<atom:link rel="http://helpdesk.hackday.2012.restfest.org/rels/tickets" type="application/vnd.org.restfest.2012.hackday+xml" href="http://.../tickets/" />
 	<xhtml:form rel="http://helpdesk.hackday.2012.restfest.org/rels/tickets" type="application/vnd.org.restfest.2012.hackday+xml" action="http://.../tickets/" method="get">
 		<xhtml:select name="sort_field">
 			<xhtml:option value="created_at" selected="selected">created_at</xhtml:option>
@@ -18,6 +19,7 @@
 		<xhtml:input type="number" name="result_page" value="1" />
 	</xhtml:form>
 	
+	<atom:link rel="http://helpdesk.hackday.2012.restfest.org/rels/users" type="application/vnd.org.restfest.2012.hackday+xml" href="http://.../users/" />
 	<xhtml:form rel="http://helpdesk.hackday.2012.restfest.org/rels/users" type="application/vnd.org.restfest.2012.hackday+xml" action="http://.../users/" method="get">
 		<xhtml:input name="user_name" type="text" />
 		<xhtml:input name="user_email" type="text" />
@@ -33,6 +35,7 @@
 		<xhtml:input type="number" name="result_page" value="1" />
 	</xhtml:form>
 	
+	<atom:link rel="http://helpdesk.hackday.2012.restfest.org/rels/changes" href="http://.../feed" type="application/vnd.org.restfest.2012.hackday+xml" />
 	<xhtml:form rel="http://helpdesk.hackday.2012.restfest.org/rels/changes" action="http://.../feed" type="application/vnd.org.restfest.2012.hackday+xml" method="get">
 		<input type="datetime" name="from" />
 		<input type="datetime" name="to" />
