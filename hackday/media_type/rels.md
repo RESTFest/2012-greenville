@@ -21,10 +21,24 @@ An individual user
 A collection of tickets.
 
 Fields:
-(tbd)
+
+* `sort_field`: either of
+    1. `created_at` for ordering by ticket creation datetime
+    1. `updated_at` for ordering by ticket update datetime
+* `sort_order`: either of
+    1. `asc` for ascending order
+    1. `desc` for descending order
 
 ### http://helpdesk.hackday.2012.restfest.org/rels/users
 A collection of users.
 
 Fields:
-(tbd)
+
+* `user_name`: for searching by user name
+* `user_email`: for searching by user email
+* `sort_field`: either of
+    1. `created_at` for ordering by ticket creation datetime
+    1. `updated_at` for ordering by ticket update datetime
+* `sort_order`: either of
+    1. `asc` for ascending order
+    1. `desc` for descending order
