@@ -42,3 +42,11 @@ Fields:
 * `sort_order`: either of
     1. `asc` for ascending order
     1. `desc` for descending order
+
+### http://helpdesk.hackday.2012.restfest.org/rels/changes
+A changes feed.
+
+Fields:
+
+* `from`: a combined ISO 8601 date and time representation to indicate a start point after which to fetch items in the feed
+* `to`: a combined ISO 8601 date and time representation to indicate an end point until which to fetch items in the feed
