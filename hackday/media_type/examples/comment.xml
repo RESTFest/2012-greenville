@@ -1,0 +1,13 @@
+<comment
+	xmlns="urn:org.restfest.2012.hackday.helpdesk.comments"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+>
+	<atom:link rel="self" href="http://.../tickets/9172361/comments/askjklz1287a" type="application/vnd.org.restfest.2012.hackday+xml" />
+	<atom:link rel="http://helpdesk.hackday.2012.restfest.org/rels/ticket" href="http://.../tickets/9172361" type="application/vnd.org.restfest.2012.hackday+xml" />
+	<created_at>2012-09-13T12:01:49Z</created_at>
+	<author>
+		<name>Joe Cool</name>
+		<email>snoopy@peanuts.com</email>
+	</author>
+	<body>I really like this idea<body>
+</comment>
