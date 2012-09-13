@@ -18,7 +18,7 @@
 	<event timestamp="2012-09-13T12:01:24Z" type="ticket_update">
 		<ticket:ticket>
 			<atom:link rel="self" href="http://.../tickets/9172361" type="application/vnd.org.restfest.2012.hackday+xml" />
-			<summary>New title :)</summary>
+			<ticket:summary>New title :)</ticket:summary>
 			<!-- all other fields here too -->
 		</ticket:ticket>
 	</event>
