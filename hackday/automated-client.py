@@ -3,6 +3,7 @@ import copy
 import itertools
 import sys
 import unittest
+import urlparse
 import httplib2
 # httplib2.debuglevel=1
 import warnings
@@ -66,15 +67,29 @@ class ClientTestCase(unittest.TestCase):
 
         # Isolate the HTML forms
         cls._ticket_list_form = cls.homepage.find("form", rel=tickets_rel)
-        cls.user_list_form = HTMLForm(
-            cls.homepage.find("form", rel=users_rel))
-        cls.change_feed_form = HTMLForm(
-            cls.homepage.find("form", rel=changes_rel))
+        cls._user_list_form = cls.homepage.find("form", rel=users_rel)
+        cls._change_feed_form = cls.homepage.find("form", rel=changes_rel)
 
         # Get the URLs to other resources
-        cls.ticket_list_url = cls.homepage.find("link", rel=tickets_rel)['href']
-        cls.user_list_url = cls.homepage.find("link", rel=users_rel)['href']
-        cls.change_feed_url = cls.homepage.find("link", rel=changes_rel)['href']
+        cls.ticket_list_url = None
+        link = cls.homepage.find("link", rel=tickets_rel)
+        if link is not None:
+            cls.ticket_list_url = link['href']
+
+        cls.user_list_url = None
+        link = cls.homepage.find("link", rel=users_rel)
+        if link is not None:
+            cls.user_list_url = link['href']
+
+        cls.change_feed_url = None
+        link = cls.homepage.find("link", rel=changes_rel)
+        if link is not None:
+            cls.change_feed_url = link['href']
+
+    @classmethod
+    def request(cls, url, *args, **kwargs):
+        url = urlparse.urljoin(cls.ROOT, url)
+        return cls.http.request(url, *args, **kwargs)
 
     @property
     def ticket_list_form(self):
@@ -99,14 +114,14 @@ class ClientTestCase(unittest.TestCase):
     @classmethod
     def post_ticket(cls, body, fetch_representation=True):
         headers = {"Content-Type": "application/vnd.org.restfest.2012.hackday+xml"}
-        response, data = cls.http.request(
+        response, data = cls.request(
             cls.ticket_list_url, "POST", headers=headers, body=body)
 
         if fetch_representation:
             if response['status'] != '201' or 'location' not in response:
                 return response, data, None
             location = response['location']
-            response2, representation = cls.http.request(location, "GET")
+            response2, representation = cls.request(location, "GET")
             return response, data, representation
         else:
             return response, data
@@ -117,11 +132,11 @@ class ClientTestCase(unittest.TestCase):
         url = soup.find("link", rel="self")['href']
         body = soup.encode()
         headers = {"Content-Type": "application/vnd.org.restfest.2012.hackday+xml"}
-        response, content = cls.http.request(
+        response, content = cls.request(
             url, "PUT", headers=headers, body=body)
 
         if int(response['status']) / 100 == 2:
-            new_response, new_content = cls.http.request(url, "GET")
+            new_response, new_content = cls.request(url, "GET")
             return response, content, new_content
         else:
             return response, content, None
@@ -183,7 +198,7 @@ class TestTicketList(ClientTestCase):
             cls.post_new_ticket(False)
 
         # Get the ticket list.
-        response, data = cls.http.request(cls.ticket_list_url)
+        response, data = cls.request(cls.ticket_list_url)
         cls.tickets = cls.parse(data)
 
     def assertValidTicketList(self, soup):
@@ -196,7 +211,7 @@ class TestTicketList(ClientTestCase):
         if next_link is None:
             warnings.warn("No next link in initial ticket list, can't test following.")
         while next_link is not None:
-            response, next_page = self.http.request(next_link['href'])
+            response, next_page = self.request(next_link['href'])
             self.assertEqual(200, response['status'])
             soup = self.parse(next_page)
             self.assertValidTicketList(soup)
@@ -207,7 +222,7 @@ class TestTicketList(ClientTestCase):
         if last_link is None:
             warnings.warn("No last link in initial ticket list, can't test following.")
         else:
-            response, last_page = self.http.request(last_link['href'])
+            response, last_page = self.request(last_link['href'])
             self.assertEqual(200, response['status'])
             soup = self.parse(last_page)
             self.assertValidTicketList(soup)
@@ -217,7 +232,7 @@ class TestTicketList(ClientTestCase):
         if last_link is None:
             warnings.warn("No self link in initial ticket list, can't test following.")
         else:
-            response, same_page = self.http.request(last_link['href'])
+            response, same_page = self.request(last_link['href'])
             self.assertEqual(200, response['status'])
             soup = self.parse(same_page)
             self.assertValidTicketList(soup)
@@ -275,7 +290,7 @@ class TestTicket(ClientTestCase):
         location = response['location']
 
         # Get the location and make sure it's a ticket.
-        response, data = self.http.request(location)
+        response, data = self.request(location)
         self.assertEqual('200', response['status'])
         self.assertEqual(
             "application/vnd.org.restfest.2012.hackday+xml",
@@ -290,10 +305,11 @@ class TestTicket(ClientTestCase):
 
     def test_delete_ticket(self):
         response, body = self.post_new_ticket(False)
+        import pdb; pdb.set_trace()
         location = response['location']
-        response, data = self.http.request(location, 'DELETE')
+        response, data = self.request(location, 'DELETE')
         self.assertEqual('200', response['status'])
-        response, data = self.http.request(location, 'GET')
+        response, data = self.request(location, 'GET')
         self.assertEqual('404', response['status'])
 
     def test_modify_state(self):
@@ -343,7 +359,7 @@ class TestChangeList(ClientTestCase):
     @classmethod
     def setUpClass(cls):
         # Get the change feed.
-        response, data = cls.http.request(cls.change_feed_url)
+        response, data = cls.request(cls.change_feed_url)
         cls.changes = cls.parse(data)
 
     def assertValidEvent(self, soup):
@@ -367,7 +383,7 @@ class TestChangeList(ClientTestCase):
         if next_link is None:
             warnings.warn("No next link in initial change list, can't test following.")
         while next_link is not None:
-            response, next_page = self.http.request(next_link['href'])
+            response, next_page = self.request(next_link['href'])
             self.assertEqual(200, response['status'])
             soup = self.parse(next_page)
             self.assertValidChangeList(soup)
