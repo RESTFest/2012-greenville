@@ -2,7 +2,7 @@
 	count="1"
 	xmlns="urn:org.restfest.2012.hackday.helpdesk.comment"
 	xmlns:atom="http://www.w3.org/2005/Atom"
-	xmlns:comment="urn:org.restfest.2012.hackday.helpdesk.comments"
+	xmlns:comments="urn:org.restfest.2012.hackday.helpdesk.comments"
 	xmlns:user="urn:org.restfest.2012.hackday.helpdesk.user"
 >
 	<atom:link rel="self" href="http://.../tickets/9172361/comments" type="application/vnd.org.restfest.2012.hackday.helpdesk+xml" />
