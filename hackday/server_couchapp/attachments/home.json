@@ -1,0 +1,134 @@
+{
+    "helpdesk": {
+        "@xmlns": "urn:org.restfest.2012.hackday.helpdesk",
+        "@xmlns:atom": "http://www.w3.org/2005/Atom",
+        "@xmlns:xhtml": "http://www.w3.org/1999/xhtml",
+        "atom:link": {
+            "@rel": "self",
+            "@href": "http://bigbluehat.ic.tl/restfest_hackday_2012/_design/helpdesk/_rewrite/",
+            "@type": "application/vnd.org.restfest.2012.hackday+xml"
+        },
+        "xhtml:form": [
+            {
+                "@rel": "http://helpdesk.hackday.2012.restfest.org/rels/tickets",
+                "@type": "application/vnd.org.restfest.2012.hackday+xml",
+                "@action": "http://bigbluehat.ic.tl/restfest_hackday_2012/_design/helpdesk/_rewrite/tickets/",
+                "@method": "get",
+                "xhtml:select": [
+                    {
+                        "@name": "sort_field",
+                        "xhtml:option": [
+                            {
+                                "@value": "created_at",
+                                "@selected": "selected",
+                                "#text": "created_at"
+                            },
+                            {
+                                "@value": "updated_at",
+                                "#text": "updated_at"
+                            }
+                        ]
+                    },
+                    {
+                        "@name": "sort_order",
+                        "xhtml:option": [
+                            {
+                                "@value": "asc",
+                                "#text": "asc"
+                            },
+                            {
+                                "@value": "desc",
+                                "@selected": "selected",
+                                "#text": "desc"
+                            }
+                        ]
+                    }
+                ],
+                "xhtml:input": [
+                    {
+                        "@type": "number",
+                        "@name": "result_size",
+                        "@value": "20"
+                    },
+                    {
+                        "@type": "number",
+                        "@name": "result_page",
+                        "@value": "1"
+                    }
+                ]
+            },
+            {
+                "@rel": "http://helpdesk.hackday.2012.restfest.org/rels/users",
+                "@type": "application/vnd.org.restfest.2012.hackday+xml",
+                "@action": "http://.../users/",
+                "@method": "get",
+                "xhtml:input": [
+                    {
+                        "@name": "user_name",
+                        "@type": "text"
+                    },
+                    {
+                        "@name": "user_email",
+                        "@type": "text"
+                    },
+                    {
+                        "@type": "number",
+                        "@name": "result_size",
+                        "@value": "20"
+                    },
+                    {
+                        "@type": "number",
+                        "@name": "result_page",
+                        "@value": "1"
+                    }
+                ],
+                "xhtml:select": [
+                    {
+                        "@name": "sort_field",
+                        "xhtml:option": [
+                            {
+                                "@value": "name",
+                                "@selected": "selected",
+                                "#text": "name"
+                            },
+                            {
+                                "@value": "email",
+                                "#text": "email"
+                            }
+                        ]
+                    },
+                    {
+                        "@name": "sort_order",
+                        "xhtml:option": [
+                            {
+                                "@value": "asc",
+                                "@selected": "selected",
+                                "#text": "asc"
+                            },
+                            {
+                                "@value": "desc",
+                                "#text": "desc"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "@rel": "http://helpdesk.hackday.2012.restfest.org/rels/changes",
+                "@action": "http://.../feed",
+                "@type": "application/vnd.org.restfest.2012.hackday+xml",
+                "@method": "get",
+                "input": [
+                    {
+                        "@type": "datetime",
+                        "@name": "from"
+                    },
+                    {
+                        "@type": "datetime",
+                        "@name": "to"
+                    }
+                ]
+            }
+        ]
+    }
+}

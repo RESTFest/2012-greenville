@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="attachments/sammy/plugins/|attachments/sammy/|attachments/" kind="src" path=""/>
+	<classpathentry excluding="sammy/plugins/|sammy/" kind="src" path="attachments"/>
+	<classpathentry excluding="plugins/" kind="src" path="attachments/sammy"/>
+	<classpathentry kind="src" path="attachments/sammy/plugins"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
