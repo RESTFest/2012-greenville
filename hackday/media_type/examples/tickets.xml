@@ -6,7 +6,7 @@
 	xmlns:user="urn:org.restfest.2012.hackday.helpdesk.user"
 >
 	<atom:link rel="self" href="http://.../tickets?sort=time&amp;order=desc&amp;page=1" type="application/vnd.org.restfest.2012.hackday+xml" />
-	<atom:link rel="next" href="http://.../tickets?sort=time&amp;order=desc&amp;page=1" type="application/vnd.org.restfest.2012.hackday+xml" />
+	<atom:link rel="next" href="http://.../tickets?sort=time&amp;order=desc&amp;page=2" type="application/vnd.org.restfest.2012.hackday+xml" />
 	<atom:link rel="last" href="http://.../tickets?sort=time&amp;order=desc&amp;page=7" type="application/vnd.org.restfest.2012.hackday+xml" />
 	
 	<ticket>
