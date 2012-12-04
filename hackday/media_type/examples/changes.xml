@@ -38,7 +38,7 @@
 	</event>
 	
 	<xhtml:form rel="http://helpdesk.hackday.2012.restfest.org/rels/changes" action="http://.../feed" type="application/vnd.org.restfest.2012.hackday+xml" method="get">
-		<input type="datetime" name="from" />
-		<input type="datetime" name="to" />
+		<xhtml:input type="datetime" name="from" />
+		<xhtml:input type="datetime" name="to" />
 	</xhtml:form>
 </changes>
