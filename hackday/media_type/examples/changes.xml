@@ -4,6 +4,7 @@
 	xmlns:comment="urn:org.restfest.2012.hackday.helpdesk.comment"
 	xmlns:atom="http://www.w3.org/2005/Atom"
 	xmlns:user="urn:org.restfest.2012.hackday.helpdesk.user"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >
 	<atom:link rel="prev" type="application/vnd.org.restfest.2012.hackday+xml" href="http://../feed?from=2012-09-13T12:00:00Z&amp;to=2012-09-13T12:00:59Z" />
 	<atom:link rel="self" type="application/vnd.org.restfest.2012.hackday+xml" href="http://../feed?from=2012-09-13T12:01:00Z&amp;to=2012-09-13T12:01:59Z" />
